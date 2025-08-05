@@ -1,0 +1,164 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: antiquewhite;
+  color: #1d1d1d;
+}
+
+header {
+  background-color: antiquewhite;
+  color: #1d0c03;
+  text-align: center;
+  padding: 20px;
+}
+
+header input[type="text"] {
+  padding: 8px;
+  margin: 5px;
+  border: none;
+  border-radius: 4px;
+  color: #444;
+}
+
+header  button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #384e82;
+  color: rgb(200, 203, 198);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.button1:hover{
+    color: #efebeb;
+    background-color: #e60023;
+    transform: scale(1.10);
+}
+.button2:hover{
+    color: #efebeb;
+    background-color: #e60023;
+    transform: scale(1.10);
+}
+
+nav {
+  background-color: #4a6da2;
+  padding: 10px;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 30px;
+}
+
+
+main {
+  padding: 30px;
+}
+.sect1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: chocolate;
+    font-size: 23px;
+}
+
+article, section {
+  margin-bottom: 40px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+section h2 {
+  color: #e60023;
+}
+
+a {
+  color: #1a73e8;
+
+}
+.chest a{
+    margin-left: 330px;   
+}
+.chest {
+    background-color: rgb(24, 23, 22);
+}
+.chest h2{
+    margin-left: 30px;
+}
+.legs{
+    background-color: rgb(12, 11, 11);
+}
+.legs a{
+    margin-left: 345px;
+}
+.legs h2{
+    color: rgb(81, 164, 81);
+}
+.arms{
+    background-color: #1d1d1d;
+}
+.arms a{
+    margin-left: 345px;
+}
+.arms h2{
+    margin-left: 220px;
+}
+
+.shoulders a{
+    margin-left: 345px;
+}
+.shoulders h2{
+    margin-left: 170px;
+}
+.shoulders{
+    background-color: #1d1d1d;
+}
+.back{
+    background-color: #1d1d1d;
+}
+.back a{
+    margin-left: 345px;
+}
+.back h2{
+    margin-left: 230px;
+}
+footer {
+  background-color:bisque;
+  color: black;
+  text-align: center;
+  padding: 15px;
+}
+.links a {
+  margin: 0 10px;
+  font-size: 25px;
+  text-decoration: none;
+}
+.links .fa-square-facebook {
+  color: #3b5998;
+}
+
+.links .fa-instagram {
+  color: #e1306c;
+}
+
+.links .fa-twitter {
+  color: #1da1f2;
+}
+
+.links .fa-youtube {
+  color: #ff0000;
+}
