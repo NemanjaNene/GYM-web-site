@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Thanks for your subscription</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+
+      .email-container {
+        max-width: 600px;
+        margin: auto;
+        background-color: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .email-header {
+        background-color: #2c4eff;
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      .email-header h1 {
+        color: white;
+        margin: 0;
+        font-size: 36px;
+      }
+
+      .email-header p {
+        color: white;
+        margin: 5px 0 0;
+        font-size: 18px;
+      }
+
+      .email-body {
+        padding: 30px;
+        color: #333;
+      }
+
+      .email-body p {
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      .button-container {
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .action-button {
+        background-color: #2c4eff;
+        color: #fff;
+        text-decoration: none;
+        padding: 14px 28px;
+        border-radius: 4px;
+        font-weight: bold;
+        display: inline-block;
+      }
+
+      .email-footer {
+        padding: 15px;
+        font-size: 12px;
+        text-align: center;
+        color: #999;
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <div class="email-header">
+        <h1>THANKS</h1>
+        <p>for your subscription!</p>
+      </div>
+
+      <div class="email-body">
+        <p>Thank you for subscribing to <strong>GymTime</strong> updates and content!</p>
+        <p>Hello <strong>{{username}}</strong>,</p>
+        <p>
+          We're excited to have you with us. Whether you're here to get stronger, leaner or just healthier — you're in the right place.
+          Stay tuned for new workouts, articles, and programs crafted to push you forward.
+        </p>
+        <p>If you didn’t sign up for this email, feel free to ignore it.</p>
+
+        <div class="button-container">
+          <a href="https://yourwebsite.com" class="action-button">Let’s Get Started</a>
+        </div>
+      </div>
+
+      <div class="email-footer">
+        &copy; 2025 GymTime. All rights reserved.
+      </div>
+    </div>
+  </body>
+</html>
