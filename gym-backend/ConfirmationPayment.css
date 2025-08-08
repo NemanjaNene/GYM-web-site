@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkmark-circle {
+  background-color: #2e7d32;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 10px #66bb6a33, 0 0 0 20px #a5d6a733, 0 0 0 30px #c8e6c933;
+}
+
+.checkmark {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.message {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #1b5e20;
+}
+
