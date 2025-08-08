@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ChatGPT - HTML_CSS</title>
+  <link rel="stylesheet" href="PaymentPage.css"/>
+</head>
+<body>
+  <div class="page">
+    <header class="page__title">GYM PAYMENT PAGE</header>
+
+    <main class="checkout">
+    
+      <section class="plans">
+        <article class="plan">
+            <input type="radio" name="plan" id="plan1" value="30" />
+          <div class="plan__days">30</div>
+          <div class="plan__label">days</div>
+          <div class="plan__price">$ 10</div>
+        </article>
+
+        <article class="plan">
+            <input type="radio" name="plan" id="plan1" value="60" />
+          <div class="plan__days">60</div>
+          <div class="plan__bonus">+10 free</div>
+          <div class="plan__label">days</div>
+          <div class="plan__price">$ 17</div>
+        </article>
+
+        <article class="plan">
+            <input type="radio" name="plan" id="plan1" value="90" />
+          <div class="plan__days">90</div>
+          <div class="plan__bonus">+20 free</div>
+          <div class="plan__label">days</div>
+          <div class="plan__price">$ 30</div>
+        </article>
+      </section>
+
+        <form class="cardform" action="#" method="post">
+          <label class="field">
+            <span class="field__title">Card Number</span>
+            <input type="text" placeholder="1234 1234 1234 1234" />
+          </label>
+
+          <div class="row">
+            <label class="field small">
+              <span class="field__title">Exp</span>
+              <div class="exp">
+                <input type="text" placeholder="MM" />
+                <span class="slash">/</span>
+                <input type="text" placeholder="YY" />
+              </div>
+            </label>
+
+            <label class="field small">
+              <span class="field__title">CVC</span>
+              <input type="text" placeholder="123" />
+            </label>
+          </div>
+
+          <label class="check">
+            <input type="checkbox" />
+            <span>I accept the <a href="#">terms and conditions</a>.</span>
+          </label>
+
+          <div class="cards-row" aria-hidden="true">
+            <span class="cardmark">Mastercard</span>
+            <span class="cardmark">Visa</span>
+            <span class="cardmark">AmEx</span>
+            <span class="cardmark">Discover</span>
+            <span class="cardmark">Maestro</span>
+            <span class="cardmark">JCB</span>
+          </div>
+
+          <button class="btn-pay" type="button">PAY</button>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
