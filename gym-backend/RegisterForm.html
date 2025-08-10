@@ -1,47 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registracija - GymTime</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GYM-site • Registracija</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="RegisterForm.css">
 </head>
 <body>
+  <header>
+    <div class="nav container">
+      <div class="brand"><span class="dot"></span> GYM-site</div>
+      <nav class="links">
+        <a href="HomePage.html">Pocetna</a>
+        <a href="Chest.html">Grudi</a>
+        <a href="Legs.html">Noge</a>
+        <a href="Arms.html">Ruke</a>
+        <a href="Shoulders.html">Ramena</a>
+        <a href="Back.html">Ledja</a>
+      </nav>
+    </div>
+  </header>
 
-<header>
-  <h1 class="top">- Registracija -</h1>
-</header>
+  <main>
+    <section class="hero hero-compact">
+      <div class="container">
+        <h1>- Registracija -</h1>
+        <p class="sub">Napravi nalog i kreni da pratis napredak.</p>
+      </div>
+    </section>
 
-<main>
-  <form action="http://localhost:3000/register" method="POST" class="register-form">
+    <section class="container form-wrap">
+      <div class="card form-card">
+        <form action="#" method="post" novalidate>
+          <div class="grid grid-2">
+            <div class="field">
+              <label for="username">Korisnicko ime</label>
+              <input id="username" name="username" type="text" placeholder="Unesite korisnicko ime" required>
+            </div>
 
+            <div class="field">
+              <label for="email">Email adresa</label>
+              <input id="email" name="email" type="email" placeholder="Unesite email" required>
+            </div>
 
-    <label for="username">Korisnicko ime:</label>
-    <input type="text" id="username" name="username" placeholder="Unesite korisnicko ime" required>
+            <div class="field">
+              <label for="password">Lozinka</label>
+              <input id="password" name="password" type="password" placeholder="Unesite lozinku" required minlength="6">
+            </div>
 
-    <label for="email">Email adresa:</label>
-    <input type="email" id="email" name="email" placeholder="Unesite email" required>
+            <div class="field">
+              <label for="weight">Tezina (kg)</label>
+              <input id="weight" name="weight" type="number" inputmode="decimal" placeholder="Unesite tezinu">
+            </div>
 
-    <label for="password">Lozinka:</label>
-    <input type="password" id="password" name="password" placeholder="Unesite lozinku" required>
+            <div class="field field-full">
+              <label for="bio">Biografija</label>
+              <textarea id="bio" name="bio" rows="4" placeholder="Napisite nesto o sebi..."></textarea>
+            </div>
+          </div>
 
-    <label for="weight">Težina (kg):</label>
-    <input type="number" id="weight" name="weight" placeholder="Unesite tezinu" required>
+         <button class="btn btn-primary btn-block" type="submit">Registruj se</button>        </form>
+      </div>
+    </section>
+  </main>
 
-    <label for="biografija">Biografija:</label>
-    <textarea id="biografija" name="biografija" placeholder="Napisite nesto o sebi..." rows="4"></textarea>
-
-    <button type="submit" class="button1" >
-  Registruj se
-</button>
-
-  </form>
-</main>
-
-<footer>
-  <p class="footer">TreinHardOrGoHome</p>
-</footer>
-
+  <footer class="container footer">
+    GYM-site • Sva prava i ideje pripadaju Nikitovic Nemanja i Dejan Arsenijevic.
+  </footer>
 </body>
 </html>
-

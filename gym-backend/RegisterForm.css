@@ -1,54 +1,114 @@
-.register-form {
-  max-width: 400px;
-  margin: 30px auto;
-  background-color: #a4a8a7;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
- .top{
-    margin-left: 370px;
-    margin-bottom: 100px;
-    margin-top: 50px;
-}
 
-.register-form label {
-  display: block;
-  margin: 15px 0 5px;
-  font-weight: bold;
-}
-
-.register-form input,
-.register-form textarea {
-  width: calc(100% - 20px);
-  margin: 0 auto 15px auto;
-  display: block;
-  padding: 15px; 
-  font-size: 16px; 
-  border: 1px solid #1f1f1d;
-  border-radius: 5px;
-  box-sizing: border-box; 
+:root{
+  --bg:#0b0f14; --bg-soft:#0f141b; --card:#121823;
+  --text:#e9eef5; --muted:#a7b1c2;
+  --accent:#57d18e; --accent-2:#73a1ff;
+  --shadow:0 8px 28px rgba(0,0,0,.45);
+  --radius:16px; --radius-lg:22px; --maxw:1100px;
+  --header-h:72px;
 }
 
 
-.register-form button {
-  background-color: #384e82;
-  color: #fff;
-  border: none;
-  padding: 12px;
-  width: 100%;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 16px;
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:'Outfit',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:
+    radial-gradient(1200px 800px at 20% -10%, rgba(115,161,255,.12), transparent),
+    radial-gradient(1200px 800px at 100% 0%, rgba(87,209,142,.10), transparent),
+    var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+a{color:var(--accent); text-decoration:none}
+a:hover{opacity:.9}
+.container{width:100%; max-width:var(--maxw); margin-inline:auto; padding:24px}
+main{padding-top:var(--header-h)}
+
+
+header{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter:saturate(140%) blur(10px);
+  background:rgba(11,15,20,.6);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px}
+.brand{display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.5px}
+.brand .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg,var(--accent),var(--accent-2)); box-shadow:0 0 0 4px rgba(87,209,142,.15)}
+.links{display:flex; gap:14px; flex-wrap:wrap}
+.links a{color:var(--muted); font-weight:600}
+.links a:hover{color:var(--text)}
+
+
+.hero{padding:48px 24px 8px}
+.hero-compact h1{font-size:40px; line-height:1.1; margin:0 0 8px}
+.sub{color:var(--muted); max-width:700px}
+
+
+.form-wrap{padding-block:10px}
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:26px;
+}
+.form-card{max-width:540px; margin-inline:auto}
+
+
+.grid{display:grid; gap:16px}
+.grid-2{grid-template-columns:1fr}
+@media(min-width:820px){.grid-2{grid-template-columns:1fr 1fr}}
+.field{display:flex; flex-direction:column; gap:8px}
+.field-full{grid-column:1 / -1}
+
+label{font-weight:700; font-size:14px}
+
+
+input, textarea{
+  width:100%; padding:12px 14px; border-radius:12px; outline:none;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.06);
+  color:var(--text); font-size:14px; transition:all .25s ease;
+}
+input::placeholder, textarea::placeholder{color:var(--muted)}
+input:focus, textarea:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(87,209,142,.28);
+  background:rgba(255,255,255,.08);
 }
 
-.register-form button:hover {
-  background-color: #e60023;
-  transform: scale(1.05);
-  transition: 0.2s;
+
+input[type="number"]{appearance:textfield}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button{appearance:none; margin:0}
+
+
+.btn{appearance:none; border:none; padding:12px 16px; border-radius:12px; font-weight:700; cursor:pointer}
+.btn-primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  color:#0b0f14;
+  transition:transform .2s ease, box-shadow .2s ease, opacity .2s;
 }
-.footer{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: blue;
-    padding: 30px 380px ;
+.btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(87,209,142,.35); opacity:.95}
+.btn-block{width:100%; margin-top:8px}
+
+
+.hint{color:var(--muted); text-align:center; margin:10px 0 0}
+.footer{margin:40px 0 20px; color:var(--muted); text-align:center}
+.hero-compact {
+  text-align: center;
+}
+
+.hero-compact .sub {
+  margin-inline: auto;
+}
+.hero h1 {
+  background: linear-gradient(135deg, #5ca2be, #3d878b, #44a4a8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding-bottom: 6px; 
+  line-height: 1.2;   
 }
