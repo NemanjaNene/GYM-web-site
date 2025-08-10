@@ -1,88 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="Stylee.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <title>GymTime</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GYM-site • Pocetna</title>
+  <meta name="description" content="Tvoj vodic za treninge i napredak — izaberi plan i kreni." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Stylee.css">
 </head>
 <body>
-
+  
   <header>
-    <h1>- Samo radi stvari u koje verujes -</h1>
-    <form>
-        <button class="button2" type="button" onclick="window.location.href='RegisterForm.html'">Register</button>
-      <input type="text" placeholder="Email" />
-      <input type="text" placeholder="Password" />
-      <button class="button1" type="submit">Sign in</button>
-    </form>
-  </header>
+    <div class="nav container">
+      <div class="brand"><span class="dot"></span> GYM-site</div>
+      <nav class="links">
+        <a class="active" href="HomePage.html">Pocetna</a>
+        <a href="Chest.html">Grudi</a>
+        <a href="Legs.html">Noge</a>
+        <a href="Arms.html">Ruke</a>
+        <a href="Shoulders.html">Ramena</a>
+        <a href="Back.html">Ledja</a>
+      </nav>
+    </div>
+    <div class="actions">
+<a href="RegisterForm.html" class="btn btn-register">Register</a>       <form class="auth" action="Login.html" method="get">
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password" required>
+    <button class="btn btn-primary" type="submit">Sign in</button>
+  </form>
+   </div>
+   </header>
 
-  <nav>
-    <p>Plan treniranja mozes izabrati u meniju:</p>
-    <br>
-    <ol>
-      <li><a href="Chest.html">Grudi</a></li>
-      <li><a href="Legs.html">Noge</a></li>
-      <li><a href="Arms.html">Ruke</a></li>
-      <li><a href="Shoulders.html">Rame</a></li>
-      <li><a href="Back.html">Ledja</a></li>
-    </ol>
-  </nav>
+
+     
+
 
   <main>
-
-    <article class="sect1">
-      <h2>Tvoje je samo da treniras, budes uporan i ne odustajes...</h2>
-      <p>Teško je, ali da je lako svi bi ozbiljno vežbali.</p>
-      <p>Koliko je bitno vežbanje i konekcija sa glavom... toliko je bitan i odmor!</p>
-      <p>Sreda i subota su dani kada se odmara telo i ne vežba se!</p>
-    </article>
-
-    <section class="chest">
-      <h2>Ponedeljkom svi rade grudi...razlika je ta što mi grudi vežbamo!</h2>
-      <a href="Chest.html" target="_blank">Trening za grudi</a>
+    
+    <section class="hero">
+      <div class="container grid grid-2">
+        <div class="wrap">
+          <span class="eyebrow"><span class="chip">Dobrodosao</span> tvoj vodic za trening</span>
+          <h1>- Samo radi stvari u koje verujes -</h1>
+          <p class="sub">
+            Tvoje je samo da treniras, budeš uporan i ne odustajes.
+            Koliko je bitno vezbanje i konekcija sa glavom, toliko je bitan i odmor.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <section class="legs">
-      <h2>Bez treninga nogu nema napretka celog tela... noge se vežbaju uvek, bez izuzetka!!!</h2>
-      <a href="Legs.html">Trening nogu</a>
+    
+    <section class="container exercises">
+      <h2>Kategorije treninga</h2>
+      <div class="ex-grid">
+        <a class="ex" href="Chest.html">
+          <h4>Grudi</h4>
+          <p class="muted">Plan za masu i definiciju misica grudi.</p>
+        </a>
+        <a class="ex" href="Legs.html">
+          <h4>Noge</h4>
+          <p class="muted">Trening nogu koji gradi snagu i masu.</p>
+        </a>
+        <a class="ex" href="Arms.html">
+          <h4>Ruke</h4>
+          <p class="muted">Jake ruke za snazne treninge.</p>
+        </a>
+        <a class="ex" href="Shoulders.html">
+          <h4>Ramena</h4>
+          <p class="muted">Siroka ramena za atletski izgled.</p>
+        </a>
+        <a class="ex" href="Back.html">
+          <h4>Leđa</h4>
+          <p class="muted">Snazna ledja koja pruzaju pun izgled tela.</p>
+        </a>
+      </div>
     </section>
 
-    <section class="arms">
-      <h2>Jake ruke znace jaki treninzi</h2>
-      <a href="Arms.html">Trening za ruke</a>
+    
+    <section class="container tips-wrap">
+      <h2>Saveti za ishranu i oporavak</h2>
+      <div class="tips">
+        <div class="tip"><b>Proteini:</b> 1.6–2.2 g po kg telesne mase dnevno.</div>
+        <div class="tip"><b>San:</b> 7–9 sati kvalitetnog sna svake noci.</div>
+        <div class="tip"><b>Hidratacija:</b> Minimum 2–3 litre vode dnevno.</div>
+        <div class="tip"><b>Aktivni odmor:</b> Lagane setnje u danima odmora.</div>
+      </div>
     </section>
 
-    <section class="shoulders">
-      <h2>Ramena su ono sto te odvaja od drugih</h2>
-      <a href="Shoulders.html">Trening za ramena</a>
+   
+    <section class="container program">
+      <div class="card">
+        <h3>Plan za pocetnike</h3>
+        <p class="muted">3 treninga nedeljno za postepeni napredak i navikavanje tela.</p>
+      </div>
+      <div class="card">
+        <h3>Plan za napredne</h3>
+        <p class="muted">6 treninga nedeljno sa fokusom na snagu i hipertrofiju.</p>
+      </div>
+      <div class="card">
+        <h3>Plan za definiciju</h3>
+        <p class="muted">Treninzi visokog intenziteta i fokus na gubljenje masti.</p>
+      </div>
     </section>
-
-    <section class="back">
-      <h2>Ledja ti daju izgled i punocu</h2>
-      <a href="Back.html">Trening za ledja</a>
-    </section>
-
   </main>
+  <section class="container nutrition-wrap">
+  <h2>Ishrana za gubljenje vode i sala</h2>
 
-  <footer class="links">
-      <h3>Follow us on this links</h3>
-      <a href="https://www.facebook.com" target="_blank">
-        <i class="fa-brands fa-square-facebook"></i>
-      </a>
-      <a href="https://www.instagram.com" target="_blank">
-        <i class="fa-brands fa-instagram"></i>
-      </a>
-      <a href="https://www.twitter.com" target="_blank">
-        <i class="fa-brands fa-twitter"></i>
-      </a>
-      <a href="https://www.youtube.com" target="_blank">
-        <i class="fa-brands fa-youtube"></i>
-      </a>
+  <div class="nutri-grid">
+    <div class="nutri">
+      <h4>Proteini</h4>
+      <ul class="list small">
+        <li>Piletina/curetina</li>
+        <li>Jaja (belanca + 1–2 zumanca)</li>
+        <li>Bela riba, tuna u salamuri</li>
+        <li>Nemastan sir, grcki jogurt 2%</li>
+      </ul>
+    </div>
+
+    <div class="nutri">
+      <h4>Ugljeni hidrati (niski GI)</h4>
+      <ul class="list small">
+        <li>Integralni pirinac, ovsene</li>
+        <li>Kinoa, heljda</li>
+        <li>Batat</li>
+        <li>Povrce: brokoli, tikvica, spanac, krastavac</li>
+      </ul>
+    </div>
+
+    <div class="nutri">
+      <h4>Zdrave masti</h4>
+      <ul class="list small">
+        <li>Maslinovo ulje 1–2 kasike</li>
+        <li>Avokado 1/2</li>
+        <li>Oresasti plodovi 20–30 g</li>
+        <li>Losos/sardina 1–2x nedeljno</li>
+      </ul>
+    </div>
+
+    <div class="nutri">
+      <h4>Hidratacija i so</h4>
+      <ul class="list small">
+        <li>Voda 30–40 ml/kg dnevno</li>
+        <li>Ograniciti ultra-slane obroke uvece</li>
+        <li>Zeleni caj !!!!</li>
+        <li>Kalijum: krastavac, banana, spanać</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="do-avoid">
+    <div class="card">
+      <h4>Radi</h4>
+      <ul class="list small">
+        <li>3–4 obroka/dan</li>
+        <li>Protein u svakom obroku</li>
+        <li>300–500 kcal manjak</li>
+        <li>6–10k koraka dnevno</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Izbegavaj</h4>
+      <ul class="list small">
+        <li>Gazirana pica i sokovi</li>
+        <li>Brza hrana i trans masti</li>
+        <li>Kasne ultra-slane obroke</li>
+        <li>Preterane “cheat” dane</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+  
+  <footer class="container">
+    GYM-site • Sva prava i ideje pripadaju Nikitovic Nemanji i Dejanu Arsenijevic.
   </footer>
-
 </body>
 </html>
-
