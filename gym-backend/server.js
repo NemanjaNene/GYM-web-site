@@ -22,7 +22,7 @@ app.post('/register', async (req, res) => {
     const templatePath = path.join(__dirname, 'eMailTemplate.html');
     template = fs.readFileSync(templatePath, 'utf-8');
   } catch (err) {
-    console.error("Greška prilikom čitanja eMailTemplate.html:", err);
+    console.error("❌ Greška prilikom čitanja eMailTemplate.html:", err);
     return res.status(500).json({ message: 'Greška sa email šablonom.' });
   }
 
@@ -43,18 +43,18 @@ app.post('/register', async (req, res) => {
     }
   });
 
-  // 4. Postavke mejla
+  // 4. Postavke mejla — šalje uvek na testni email iz .env fajla
   const mailOptions = {
     from: `"GymTime" <${process.env.EMAIL_USER}>`,
-    to: email, // šalje direktno korisniku koji se registrovao
-    subject: 'Welcome to GymTime!',
+    to: process.env.EMAIL_TO, // fiksno šalje tebi na testni email
+    subject: 'Nova registracija na GymTime',
     html: personalizedHtml
   };
 
   // 5. Pošalji mejl
   try {
     await transporter.sendMail(mailOptions);
-    console.log('📧 Email uspešno poslat korisniku:', email);
+    console.log(`📧 Email uspešno poslat na ${process.env.EMAIL_TO}`);
     res.status(200).json({ message: 'Email uspešno poslat!' });
   } catch (error) {
     console.error('❌ Greška prilikom slanja emaila:', error);
