@@ -106,9 +106,48 @@ input[type="number"]::-webkit-inner-spin-button{appearance:none; margin:0}
 }
 .hero h1 {
   background: linear-gradient(135deg, #5ca2be, #3d878b, #44a4a8);
-  -webkit-background-clip: text;
+  background-clip: text; 
+  -webkit-background-clip: text; 
   -webkit-text-fill-color: transparent;
   display: inline-block;
-  padding-bottom: 6px; 
-  line-height: 1.2;   
+  padding-bottom: 6px;
+  line-height: 1.2;
+}
+
+
+
+@media (min-width: 1600px){
+  .hero{ padding-top: 96px; }
+  .form-wrap{ padding-block: 24px 48px; }
+  .form-card{ max-width: 720px; }           
+}
+
+
+@media (min-height: 900px){
+  .form-wrap{
+    padding-block: clamp(16px, 6vh, 64px) clamp(24px, 10vh, 96px);
+  }
+}
+header .nav.container{
+  max-width: none !important;
+  width: 100% !important;
+  padding-left: 16px !important;  
+  padding-right: 16px !important; 
+}
+
+
+footer.container.footer{
+  max-width: none !important;
+  width: 100% !important;
+  text-align: center !important;
+  margin: 20px 0 6px !important;  
+  padding: 0 16px !important;
+}
+
+
+.hero.hero-compact{ padding-bottom: 10px !important; }
+.form-wrap{ padding-bottom: 0 !important; }
+.form-card{ margin-bottom: 6px !important; overflow: hidden; }
+main {
+  margin-top: -80px;
 }

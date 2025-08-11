@@ -104,3 +104,92 @@ a:hover{opacity:.9}
 .card {
   margin: 16px 0; 
 }
+
+header {
+  background-color: transparent;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+header .nav.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px; /* razmak levo/desno */
+  box-sizing: border-box;
+}
+
+header .brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+header .dot {
+  width: 10px;
+  height: 10px;
+  background-color: #00ff88;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+
+
+header .links {
+  display: flex;
+  gap: 20px;
+}
+
+header .links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+header .links a.active {
+  color: #00ff88;
+}
+
+header .nav.container {
+  width: 100% !important;
+  max-width: none !important;
+  padding: 0 60px;
+  margin: 0;
+}
+.program {
+  margin-top: 200px;
+}
+
+.hero-image{
+  display:flex;
+  justify-content:center;
+  margin-top:16px;
+}
+
+@media (min-width: 880px) {
+  .hero { 
+    position: relative;
+    padding-bottom: 160px;
+  }
+  .wrap { 
+    position: relative;
+  }
+
+  .hero-image {
+    position: absolute;
+    left: 0;        
+    top: 90%;             
+    transform: translate(0, -50%); 
+    z-index: 1;
+  }
+
+  .hero-image img {
+    width: clamp(300px, 28vw, 400px); 
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(0,0,0,.5));
+    border-radius: 12px;
+  }
+}

@@ -87,7 +87,7 @@ h1{font-size:44px; line-height:1.1; margin:10px 0 12px}
 }
 .ex:hover{border-color:var(--accent)}
 
-.tips-wrap{margin-top:28px}
+.tips-wrap{margin-top:140px}
 .tips{display:grid; gap:12px; grid-template-columns:1fr}
 @media(min-width:800px){.tips{grid-template-columns:1fr 1fr}}
 .tip{
@@ -129,7 +129,7 @@ footer{
 .ex-grid a.ex h4{margin:6px 0 4px}
 .ex-grid a.ex p{margin:0; color:var(--muted)}
 
-.nutrition-wrap{margin-top:60px}
+.nutrition-wrap{margin-top:160px}
 .nutri-grid{display:grid; gap:12px; grid-template-columns:1fr}
 @media(min-width:900px){.nutri-grid{grid-template-columns:repeat(4,1fr)}}
 
@@ -189,4 +189,30 @@ footer{
 .btn-primary:hover,
 .btn-register:hover {
   opacity: 0.9;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px; 
+}
+
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 40px; 
+}
+
+
+.links a {
+  margin-left: 20px;
+}
+
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
