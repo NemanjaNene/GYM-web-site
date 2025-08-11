@@ -33,38 +33,38 @@
     </section>
 
     <section class="container form-wrap">
-      <div class="card form-card">
-        <form action="#" method="post" novalidate>
-          <div class="grid grid-2">
-            <div class="field">
-              <label for="username">Korisnicko ime</label>
-              <input id="username" name="username" type="text" placeholder="Unesite korisnicko ime" required>
-            </div>
+  <div class="card form-card">
+    <!-- OTVORI FORMU: šalji na tvoj backend -->
+    <form action="http://localhost:3000/register" method="post" novalidate>
+      <div class="grid grid-2">
+        <div class="field">
+          <label for="username">Korisnicko ime</label>
+          <input id="username" name="username" type="text" placeholder="Unesite korisnicko ime" required>
+        </div>
 
-            <div class="field">
-              <label for="email">Email adresa</label>
-              <input id="email" name="email" type="email" placeholder="Unesite email" required>
-            </div>
+        <div class="field">
+          <label for="email">Email adresa</label>
+          <input id="email" name="email" type="email" placeholder="Unesite email" required>
+        </div>
 
-            <div class="field">
-              <label for="password">Lozinka</label>
-              <input id="password" name="password" type="password" placeholder="Unesite lozinku" required minlength="6">
-            </div>
+        <div class="field">
+          <label for="password">Lozinka</label>
+          <input id="password" name="password" type="password" placeholder="Unesite lozinku" required minlength="6">
+        </div>
+        <div class="field">
+          <label for="weight">Tezina (kg)</label>
+          <input id="weight" name="weight" type="number" inputmode="decimal" placeholder="Unesite tezinu">
+        </div>
 
-            <div class="field">
-              <label for="weight">Tezina (kg)</label>
-              <input id="weight" name="weight" type="number" inputmode="decimal" placeholder="Unesite tezinu">
-            </div>
-
-            <div class="field field-full">
-              <label for="bio">Biografija</label>
-              <textarea id="bio" name="bio" rows="4" placeholder="Napisite nesto o sebi..."></textarea>
-            </div>
-          </div>
-
-         <button class="btn btn-primary btn-block" type="submit">Registruj se</button>        </form>
+        <div class="field field-full">
+          <label for="bio">Biografija</label>
+          <textarea id="bio" name="biografija" rows="4" placeholder="Napisite nesto o sebi..."></textarea>
+        </div>
       </div>
-    </section>
+      <button type="submit" class="btn btn-primary btn-block">Registruj se</button>
+    </form>
+  </div>
+</section>
   </main>
 
   <footer class="container footer">
