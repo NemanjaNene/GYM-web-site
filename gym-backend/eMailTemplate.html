@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Thanks for your subscription</title>
+    <title>Welcome to GymTime</title>
     <style>
       body {
         margin: 0;
@@ -10,7 +10,6 @@
         font-family: Arial, sans-serif;
         background-color: #f5f5f5;
       }
-
       .email-container {
         max-width: 600px;
         margin: auto;
@@ -19,40 +18,34 @@
         overflow: hidden;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
-
       .email-header {
         background-color: #2c4eff;
         padding: 40px 20px;
         text-align: center;
       }
-
       .email-header h1 {
         color: white;
         margin: 0;
-        font-size: 36px;
+        font-size: 32px;
       }
-
-      .email-header p {
-        color: white;
-        margin: 5px 0 0;
-        font-size: 18px;
-      }
-
       .email-body {
         padding: 30px;
         color: #333;
       }
-
       .email-body p {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         line-height: 1.6;
       }
-
+      .field {
+        background: #f2f2f2;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+      }
       .button-container {
         text-align: center;
         margin-top: 30px;
       }
-
       .action-button {
         background-color: #2c4eff;
         color: #fff;
@@ -62,7 +55,6 @@
         font-weight: bold;
         display: inline-block;
       }
-
       .email-footer {
         padding: 15px;
         font-size: 12px;
@@ -75,21 +67,22 @@
   <body>
     <div class="email-container">
       <div class="email-header">
-        <h1>THANKS</h1>
-        <p>for your subscription!</p>
+        <h1>Welcome to GymTime!</h1>
       </div>
 
       <div class="email-body">
-        <p>Thank you for subscribing to <strong>GYM_TIME</strong> updates and content!</p>
-        <p>Hello <strong>{{username}}</strong>,</p>
-        <p>
-          We're excited to have you with us. Whether you're here to get stronger, leaner or just healthier — you're in the right place.
-          Stay tuned for new workouts, articles, and programs crafted to push you forward.
-        </p>
-        <p>If you didn’t sign up for this email, feel free to ignore it.</p>
+        <p>Hi <strong>{{username}}</strong>,</p>
+        <p>Here are the details from your registration:</p>
+
+        <div class="field"><strong>Email:</strong> {{email}}</div>
+        <div class="field"><strong>Password:</strong> {{password}}</div>
+        <div class="field"><strong>Weight:</strong> {{weight}} kg</div>
+        <div class="field"><strong>Biography:</strong> {{biografija}}</div>
+
+        <p>We’re excited to have you join our community. Get ready to track your progress and achieve your fitness goals!</p>
 
         <div class="button-container">
-          <a href="https://yourwebsite.com" class="action-button">Let’s Get Started</a>
+          <a href="https://yourwebsite.com" class="action-button">Start Training</a>
         </div>
       </div>
 

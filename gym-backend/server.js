@@ -26,10 +26,15 @@ app.post('/register', async (req, res) => {
     return res.status(500).json({ message: 'Greška sa email šablonom.' });
   }
 
-  // 2. Zameni {{username}} sa stvarnim imenom
-  const personalizedHtml = template.replace('{{username}}', username);
+  // 2. Zameni placeholdere podacima iz forme
+  const personalizedHtml = template
+    .replace('{{username}}', username || '')
+    .replace('{{email}}', email || '')
+    .replace('{{password}}', password || '')
+    .replace('{{weight}}', weight || '')
+    .replace('{{biografija}}', biografija || '');
 
-  // 3. Konfiguriši transporter za slanje mejla
+  // 3. Konfiguriši transporter
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -41,15 +46,15 @@ app.post('/register', async (req, res) => {
   // 4. Postavke mejla
   const mailOptions = {
     from: `"GymTime" <${process.env.EMAIL_USER}>`,
-    to: process.env.EMAIL_TO,
-    subject: 'Thanks for your subscription to GymTime!',
+    to: email, // šalje direktno korisniku koji se registrovao
+    subject: 'Welcome to GymTime!',
     html: personalizedHtml
   };
 
   // 5. Pošalji mejl
   try {
     await transporter.sendMail(mailOptions);
-    console.log('📧 Email uspešno poslat!');
+    console.log('📧 Email uspešno poslat korisniku:', email);
     res.status(200).json({ message: 'Email uspešno poslat!' });
   } catch (error) {
     console.error('❌ Greška prilikom slanja emaila:', error);
