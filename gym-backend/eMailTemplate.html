@@ -1,93 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="sr">
   <head>
     <meta charset="UTF-8" />
-    <title>Welcome to GymTime</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background-color: #f5f5f5;
-      }
-      .email-container {
-        max-width: 600px;
-        margin: auto;
-        background-color: #ffffff;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      .email-header {
-        background-color: #2c4eff;
-        padding: 40px 20px;
-        text-align: center;
-      }
-      .email-header h1 {
-        color: white;
-        margin: 0;
-        font-size: 32px;
-      }
-      .email-body {
-        padding: 30px;
-        color: #333;
-      }
-      .email-body p {
-        margin-bottom: 15px;
-        line-height: 1.6;
-      }
-      .field {
-        background: #f2f2f2;
-        padding: 10px;
-        margin-bottom: 10px;
-        border-radius: 4px;
-      }
-      .button-container {
-        text-align: center;
-        margin-top: 30px;
-      }
-      .action-button {
-        background-color: #2c4eff;
-        color: #fff;
-        text-decoration: none;
-        padding: 14px 28px;
-        border-radius: 4px;
-        font-weight: bold;
-        display: inline-block;
-      }
-      .email-footer {
-        padding: 15px;
-        font-size: 12px;
-        text-align: center;
-        color: #999;
-        background-color: #f2f2f2;
-      }
-    </style>
+    <title>Dobrodosao u Aspire</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="x-apple-disable-message-reformatting">
   </head>
-  <body>
-    <div class="email-container">
-      <div class="email-header">
-        <h1>Welcome to GymTime!</h1>
+  <body style="
+    margin:0; padding:0; font-family: Arial, sans-serif;
+    background-color:#0b0f14; color:#e9eef5;
+    display:flex; align-items:center; justify-content:center; min-height:100vh;
+  ">
+
+  
+    <div style="
+      width:100%; max-width:600px; 
+      background-color:#121823; border-radius:12px; overflow:hidden;
+      box-shadow:0 6px 24px rgba(0,0,0,.35);
+    ">
+
+      <div style="
+        background:linear-gradient(135deg,#57d18e,#73a1ff);
+        padding:30px 20px; text-align:center;
+      ">
+        <h1 style="margin:0; font-size:28px; color:#0b0f14;">Dobrodosao u Aspire!</h1>
       </div>
 
-      <div class="email-body">
-        <p>Hi <strong>{{username}}</strong>,</p>
-        <p>Here are the details from your registration:</p>
+      
+      <div style="padding:30px;">
+        <p>Cao <strong>{{username}}</strong>,</p>
+        <p>Drago mi je sto si se pridruzio/la Aspire ekipi. Evo kratkog pregleda tvoje registracije:</p>
 
-        <div class="field"><strong>Email:</strong> {{email}}</div>
-        <div class="field"><strong>Password:</strong> {{password}}</div>
-        <div class="field"><strong>Weight:</strong> {{weight}} kg</div>
-        <div class="field"><strong>Biography:</strong> {{biografija}}</div>
-
-        <p>We’re excited to have you join our community. Get ready to track your progress and achieve your fitness goals!</p>
-
-        <div class="button-container">
-          <a href="https://yourwebsite.com" class="action-button">Start Training</a>
+        <div style="background:#0f141b; padding:10px; border-radius:6px; margin-bottom:10px;">
+          <strong>Email:</strong> {{email}}
         </div>
-      </div>
+        <div style="background:#0f141b; padding:10px; border-radius:6px; margin-bottom:10px;">
+          <strong>Lozinka:</strong> {{password}}
+        </div>
+        <div style="background:#0f141b; padding:10px; border-radius:6px; margin-bottom:10px;">
+          <strong>Tezina:</strong> {{weight}} kg
+        </div>
+        <div style="background:#0f141b; padding:10px; border-radius:6px; margin-bottom:10px;">
+          <strong>Biografija:</strong> {{biografija}}
+        </div>
 
-      <div class="email-footer">
-        &copy; 2025 GymTime. All rights reserved.
+        <p>Od sada imas pristup planovima treninga, smernicama za ishranu i suplementaciju i svemu sto moze da ti pomogne da izvuces maksimum iz treninga.</p>
+        <p>Nema razloga da ne uspes 💪</p>
+
+        
+        <div style="text-align:center; padding-top:8px; padding-bottom:32px;">
+          <a href="{{cta_url}}" style="
+            background:linear-gradient(135deg,#57d18e,#73a1ff);
+            color:#0b0f14; text-decoration:none; font-weight:bold;
+            padding:14px 28px; border-radius:8px; display:inline-block;
+          ">Otvori Aspire nalog</a>
+        <hr>
+        <br>
+        <br>
+     
+      <div style="padding:15px; font-size:12px; text-align:center; color:#a7b1c2; background-color:#0f141b;">
+        © 2025 Aspire. Sva prava i odgovornost vezana za sajt poseduju Nemanja Nikitovic i Dejan Arenijevic.
       </div>
     </div>
   </body>

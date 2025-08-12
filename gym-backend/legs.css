@@ -98,3 +98,60 @@ footer{margin:40px 0 20px; color:var(--muted); text-align:center}
 a{color:var(--accent)}
 a:hover{opacity:.9}
 #program.container { padding-top: 75px; }
+
+header .links a.active {
+  color: #00ff88 !important;
+}
+
+
+
+header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(140%) blur(10px);
+  background: rgba(11,15,20,.6);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+header .nav.container{
+  width: 100% !important;
+  max-width: none !important;   
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 0 60px;              
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header .brand{
+  display:flex; align-items:center; gap:12px;
+  font-weight:700; font-size:1.2rem; letter-spacing:.5px;
+}
+header .brand .dot{
+  width:10px; height:10px; border-radius:50%;
+  background: linear-gradient(135deg, #57d18e, #73a1ff);
+  box-shadow: 0 0 0 4px rgba(87,209,142,.15);
+}
+
+header .links{display:flex; gap:20px; flex-wrap:wrap}
+header .links a{
+  color: rgba(233,238,245,.75);
+  text-decoration:none;
+  font-weight:600;
+}
+header .links a:hover,
+header .links a.active{ color:#e9eef5 }
+
+@media (max-width: 680px){
+  header .nav.container{ padding: 0 16px; }
+}
+
+main{ scroll-margin-top: 80px; }
+#program.container { 
+  padding-top: 250px; 
+}

@@ -216,3 +216,6 @@ header {
   align-items: center;
   gap: 15px;
 }
+header .links a.active {
+  color: #00ff88;
+}
