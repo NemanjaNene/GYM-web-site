@@ -1,0 +1,108 @@
+:root{
+  --bg:#0b0f14; --bg-soft:#0f141b; --card:#121823;
+  --text:#e9eef5; --muted:#a7b1c2;
+  --accent:#57d18e; --accent-2:#73a1ff;
+  --shadow:0 6px 24px rgba(0,0,0,.35);
+  --radius:16px;
+  --maxw:1200px;              
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family:'Outfit',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:
+    radial-gradient(1200px 800px at 20% -10%, rgba(115,161,255,.15), transparent),
+    radial-gradient(1200px 800px at 100% 0%, rgba(87,209,142,.12), transparent),
+    var(--bg);
+  color:var(--text); line-height:1.6;
+}
+
+.container{width:100%; max-width:var(--maxw); margin-inline:auto; padding:0 24px}
+
+
+.site-header{
+  position:sticky; top:0; z-index:40;
+  backdrop-filter:saturate(140%) blur(10px);
+  background:rgba(11,15,20,.6);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  min-height:60px; display:flex; align-items:center;
+}
+.site-header .nav.container{
+  width:100% !important;
+  max-width:none !important;
+  margin:0; box-sizing:border-box;
+}
+.nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
+.brand{display:flex; align-items:center; gap:12px; font-weight:700}
+.brand .dot{width:10px; height:10px; border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2)); box-shadow:0 0 0 4px rgba(87,209,142,.15)}
+.links{display:flex; gap:14px}
+.links a{color:var(--muted); text-decoration:none; font-weight:600}
+.links a.active, .links a:hover{color:var(--text)}
+@media (max-width:680px){ .site-header .nav.container{ padding:0 16px } }
+
+
+.page{ padding:48px 0 36px }   
+
+
+.hero .wrap{max-width:860px}
+.eyebrow{display:inline-flex; gap:8px; color:var(--muted); font-weight:600; letter-spacing:.6px; text-transform:uppercase; font-size:12px}
+.eyebrow .chip{padding:4px 10px; border:1px solid rgba(255,255,255,.12); border-radius:999px}
+h1{font-size:clamp(28px,2.6vw + 1rem,44px); line-height:1.1; margin:10px 0 12px}
+.sub{color:var(--muted)}
+
+
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:22px;              
+  margin-top:22px;
+}
+.card h3{margin:4px 0 8px}
+.bullets{margin:8px 0 0; padding-left:18px}
+.bullets li{margin:6px 0}
+
+
+.table-wrap{overflow:hidden}
+.table-scroll{
+  overflow-x:auto;
+  border-radius:12px;
+  max-width:100%;       
+}
+.meals{
+  width:100%;
+  table-layout: fixed;  
+  border-collapse:separate;
+  border-spacing:0;
+}
+.meals thead th{
+  position:sticky; top:0;
+  background:var(--bg-soft); color:var(--text);
+  border-bottom:1px solid rgba(255,255,255,.10);
+  padding:12px 10px;
+  text-align:left;
+  word-break:break-word;
+}
+.meals td, .meals th{
+  padding:12px 10px;
+  vertical-align:top;
+  word-break:break-word;
+}
+.meals tbody td{
+  background:rgba(255,255,255,.03);
+  border-bottom:1px solid rgba(255,255,255,.06)
+}
+.meals tbody tr td:first-child{
+  background:rgba(255,255,255,.05);
+  font-weight:700
+}
+.rowhdr{ font-weight:700 }
+.hint{ margin-top:12px }
+
+
+@media (max-width:720px){
+  .meals td, .meals th{ padding:10px 6px }
+}meals td{min-width:140px}
