@@ -1,17 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Payment Success</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aspire • Payment completed</title>
   <link rel="stylesheet" href="ConfirmationPayment.css">
 </head>
 <body>
-  <div class="container">
-    <div class="checkmark-circle">
-      <span class="checkmark">✔</span>
-    </div>
-    <p class="message">Payment<br>completed</p>
-<button onclick="location.href='HomePage.html'">Go to Homepage</button>  </div>
+
+
+  
+  <main class="center-wrap">
+    <section class="card success">
+      <div class="icon-wrap">
+        <span class="ring ring-1"></span>
+        <span class="ring ring-2"></span>
+        <span class="ring ring-3"></span>
+        <div class="check">✓</div>
+      </div>
+
+      <h1>Uplata uspesno izvrsena</h1>
+      <p class="muted">Hvala ti! Tvoja transakcija je obradjena. Detalji porudzbine su poslati na e-mail.</p>
+
+      <div class="info">
+        <div><b>Iznos:</b> <span>{{amount}} RSD</span></div>
+        <div><b>Transakcija ID:</b> <span>{{tx_id}}</span></div>
+        <div><b>Email:</b> <span>{{email}}</span></div>
+      </div>
+
+      <div class="cta">
+        <a class="btn btn-primary" href="HomePage.html">Idi na pocetnu</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2025 Aspire. Sva prava i odgovornost vezana za sajt poseduju Nemanja Nikitovic i Dejan Arenijevic.
+  </footer>
+
 </body>
 </html>

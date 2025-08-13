@@ -1,81 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ChatGPT - HTML_CSS</title>
-  <link rel="stylesheet" href="PaymentPage.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aspire • Payment</title>
+  <link rel="stylesheet" href="PaymentPage.css" />
 </head>
 <body>
-  <div class="page">
-    <header class="page__title">GYM PAYMENT PAGE</header>
+ 
 
-    <main class="checkout">
+  <main class="container page">
+    <section class="grid grid-2">
     
-      <section class="plans">
-        <article class="plan">
-            <input type="radio" name="plan" id="plan1" value="30" />
-          <div class="plan__days">30</div>
-          <div class="plan__label">days</div>
-          <div class="plan__price">$ 10</div>
-        </article>
-
-        <article class="plan">
-            <input type="radio" name="plan" id="plan1" value="60" />
-          <div class="plan__days">60</div>
-          <div class="plan__bonus">+10 free</div>
-          <div class="plan__label">days</div>
-          <div class="plan__price">$ 17</div>
-        </article>
-
-        <article class="plan">
-            <input type="radio" name="plan" id="plan1" value="90" />
-          <div class="plan__days">90</div>
-          <div class="plan__bonus">+20 free</div>
-          <div class="plan__label">days</div>
-          <div class="plan__price">$ 30</div>
-        </article>
-      </section>
-
-        <form class="cardform" action="#" method="post">
-          <label class="field">
-            <span class="field__title">Card Number</span>
-            <input type="text" placeholder="1234 1234 1234 1234" />
-          </label>
-
+      <div class="col">
+        <div class="card">
+          <h2>Podaci kupca</h2>
           <div class="row">
-            <label class="field small">
-              <span class="field__title">Exp</span>
-              <div class="exp">
-                <input type="text" placeholder="MM" />
-                <span class="slash">/</span>
-                <input type="text" placeholder="YY" />
-              </div>
-            </label>
-
-            <label class="field small">
-              <span class="field__title">CVC</span>
-              <input type="text" placeholder="123" />
-            </label>
+            <label>Ime i prezime</label>
+            <input type="text" placeholder="Ime Prezime" />
           </div>
+          <div class="row two">
+            <div>
+              <label>Email</label>
+              <input type="email" placeholder="email@primer.com" />
+            </div>
+            <div>
+              <label>Drzava</label>
+              <select>
+                <option>Srbija</option>
+                <option>Crna Gora</option>
+                <option>BiH</option>
+                <option>Hrvatska</option>
+              </select>
+            </div>
+          </div>
+        </div>
 
+        <div class="card">
+          <h2>Detalji kartice</h2>
+          <div class="row">
+            <label>Broj kartice</label>
+            <input inputmode="numeric" pattern="[0-9 ]*" placeholder="1234 5678 9012 3456" />
+          </div>
+          <div class="row two">
+            <div>
+              <label>Vazi do</label>
+              <input inputmode="numeric" placeholder="MM/YY" />
+            </div>
+            <div>
+              <label>CVC</label>
+              <input inputmode="numeric" placeholder="123" />
+            </div>
+          </div>
+          
+          </div>
           <label class="check">
             <input type="checkbox" />
-            <span>I accept the <a href="#">terms and conditions</a>.</span>
+            <span>Prihvatam uslove koriscenja i politiku privatnosti</span>
           </label>
+          <div class="cta">
+            <a class="btn btn-primary" href="ConfirmationPayment.html">Plati sada</a>
+          </div>
+        </div>
+      </div>
 
-          <div class="cards-row" aria-hidden="true">
-            <span class="cardmark">Mastercard</span>
-            <span class="cardmark">Visa</span>
-            <span class="cardmark">AmEx</span>
-            <span class="cardmark">Discover</span>
-            <span class="cardmark">Maestro</span>
-            <span class="cardmark">JCB</span>
+    
+      <aside class="col">
+        <div class="card summary">
+          <h3>Order summary</h3>
+
+          <ul class="list">
+            <li><span>Plan</span><b>{{plan_name}}</b></li>
+            <li><span>Trajanje</span><b>{{plan_duration}}</b></li>
+            <li><span>Cena</span><b>{{amount}} RSD</b></li>
+          </ul>
+
+          <div class="total">
+            <span>Ukupno</span>
+            <b>{{total}} RSD</b>
           </div>
 
-         <button class="btn-pay" type="button" onclick="location.href='ConfirmationPayment.html'">PAY</button>        </form>
-      </section>
-    </main>
-  </div>
+          <div class="note">
+            ✦ Sigurna naplata. Tvoja uplata ce odmah otkljucati Aspire planove, ishranu i suplementaciju.
+          </div>
+        </div>
+
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2025 Aspire. Sva prava zadrzana.
+  </footer>
 </body>
 </html>
