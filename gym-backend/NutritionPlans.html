@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aspire • Planovi po cilju (jasno za pocetnike)</title>
+  <link rel="stylesheet" href="nutrition-plans.css" />
+</head>
+<body>
+ 
+  <header class="site-header">
+    <div class="nav container">
+      <div class="brand"><span class="dot"></span> Aspire</div>
+      <nav class="links">
+        <a href="HomePage.html">Pocetna</a>
+        <a href="Nutrition.html" class="active">Ishrana</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow"><span class="chip">Planovi po cilju</span> najjednostavnije moguce</span>
+        <h1>Sta da jedem za svoj cilj</h1>
+        <p class="sub">
+          Tri koraka. Jedna formula. Jasni brojevi. Bez komplikovanja.
+        </p>
+      </div>
+    </section>
+
+    
+    <section class="grid cards">
+      <article class="card">
+        <div class="ico">1️⃣</div>
+        <div>
+          <h3>Izracunaj odrzavanje (kcal)</h3>
+          <p class="muted">
+            Brz pocetni orijentir: <b>kcal_odrzavanja = 30 × tezina(kg)</b>.<br/>
+            Primer (80 kg): <b>80 × 30 = 2400 kcal</b>.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="ico">2️⃣</div>
+        <div>
+          <h3>Izaberi cilj</h3>
+          <ul class="muted list">
+            <li><b>Mrsavljenje:</b> 0.8 × odrzavanje (oko -20%)</li>
+            <li><b>Odrzavanje:</b> 1.0 × odrzavanje</li>
+            <li><b>Masa:</b> 1.1–1.15 × odrzavanje (+10–15%)</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="ico">3️⃣</div>
+        <div>
+          <h3>Podeli makroe (u gramima)</h3>
+          <ul class="muted list">
+            <li><b>Protein:</b> 2.0 g × tezina(kg)</li>
+            <li><b>Masti:</b> 0.8 g/kg (mrsa), 0.9 g/kg (odrz), 1.0 g/kg (masa)</li>
+            <li><b>Ugljeni hidrati:</b> sve preostale kcal / 4</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+   
+    <section class="grid cards">
+      <article class="card plan">
+        <div class="strip cut">MASA (deficit)</div>
+        <h3>Masa (deficit)</h3>
+        <p class="muted">Kalorije: <b>0.8 × odrzavanje</b></p>
+        <div class="grid-mini">
+          <div class="mini"><span>Protein</span><b>2.0 g/kg</b></div>
+          <div class="mini"><span>Masti</span><b>0.8 g/kg</b></div>
+          <div class="mini"><span>UH</span><b>ostatak</b></div>
+        </div>
+        <p class="tip">UH drzi vise oko treninga, ostatak dana umereno.</p>
+      </article>
+
+      <article class="card plan">
+        <div class="strip keep">ODRZAVANJE</div>
+        <h3>Odrzavanje</h3>
+        <p class="muted">Kalorije: <b>1.0 × odrzavanje</b></p>
+        <div class="grid-mini">
+          <div class="mini"><span>Protein</span><b>1.6–2.0 g/kg</b></div>
+          <div class="mini"><span>Masti</span><b>0.9 g/kg</b></div>
+          <div class="mini"><span>UH</span><b>ostatak</b></div>
+        </div>
+        <p class="tip">Stabilan unos, idealno za pauzu izmedju faza.</p>
+      </article>
+
+      <article class="card plan">
+        <div class="strip bulk">MASA (suficit)</div>
+        <h3>Masa (suficit)</h3>
+        <p class="muted">Kalorije: <b>1.1–1.15 × odrzavanje</b></p>
+        <div class="grid-mini">
+          <div class="mini"><span>Protein</span><b>1.6–2.0 g/kg</b></div>
+          <div class="mini"><span>Masti</span><b>1.0 g/kg</b></div>
+          <div class="mini"><span>UH</span><b>ostatak</b></div>
+        </div>
+        <p class="tip">Postepeno dodaj kcal da izbegnes visak masti.</p>
+      </article>
+    </section>
+
+   
+    <section class="card example">
+      <h3>Primer izracuna (tezina 80 kg)</h3>
+      <div class="steps">
+        <div class="step">
+          <b>1) Odrzavanje:</b> 80 × 30 = <b>2400 kcal</b>
+        </div>
+        <div class="step">
+          <b>2) Kalorije po cilju:</b>
+          <ul>
+            <li>Masa: 2400 × 0.8 = <b>1920 kcal</b></li>
+            <li>Odrzavanje: <b>2400 kcal</b></li>
+            <li>Masa: 2400 × 1.1 = <b>2640 kcal</b> (po potrebi do 1.15)</li>
+          </ul>
+        </div>
+        <div class="step">
+          <b>3) Makroi (u gramima):</b>
+          <table class="tbl">
+            <thead>
+              <tr>
+                <th>Cilj</th>
+                <th>Protein</th>
+                <th>Masti</th>
+                <th>UH (ostatak)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Masa</td>
+                <td>80×2.0 = <b>160 g</b></td>
+                <td>80×0.8 = <b>64 g</b></td>
+                <td>
+                  kcal za P: 160×4 = 640, M: 64×9 = 576<br/>
+                  UH kcal = 1920 − (640+576) = 704 → <b>176 g</b>
+                </td>
+              </tr>
+              <tr>
+                <td>Odrzavanje</td>
+                <td><b>160 g</b></td>
+                <td>80×0.9 = <b>72 g</b></td>
+                <td>
+                  P: 640, M: 72×9 = 648 → UH kcal = 2400 − 1288 = 1112 → <b>278 g</b>
+                </td>
+              </tr>
+              <tr>
+                <td>Masa</td>
+                <td><b>160 g</b></td>
+                <td>80×1.0 = <b>80 g</b></td>
+                <td>
+                  P: 640, M: 720 → UH kcal = 2640 − 1360 = 1280 → <b>320 g</b>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="muted tiny">
+            Napomena: brojevi su startna meta. Ako 1–2 nedelje nema pomaka, pomeri unos za 150–250 kcal.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="card day">
+      <h3>Brzi dan (primer porcija, bez merenja do grama)</h3>
+      <div class="grid-mini2">
+        <div class="mini2">
+          <b>Dorucak</b>
+          <p>Ovsene + whey / jogurt • 1 banana</p>
+        </div>
+        <div class="mini2">
+          <b>Rucak</b>
+          <p>Piletina 200 g • pirinac 150 g kuvano • salata</p>
+        </div>
+        <div class="mini2">
+          <b>Uzina</b>
+          <p>Voce + sipka proteina ili grcki jogurt</p>
+        </div>
+        <div class="mini2">
+          <b>Vecera</b>
+          <p>Tunjevina ili jaja • povrce • malo maslinovog ulja</p>
+        </div>
+      </div>
+      <p class="muted tiny">Pomeri kolicine gore/dole da pogodis svoje ciljne kcal i makroe.</p>
+    </section>
+  </main>
+</body>
+</html>
