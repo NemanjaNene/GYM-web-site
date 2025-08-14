@@ -63,5 +63,5 @@ app.post('/register', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`✅ Server radi na http://localhost:${PORT}`);
+  console.log(`🚀 Server pokrenut na http://localhost:${PORT}`);
 });
