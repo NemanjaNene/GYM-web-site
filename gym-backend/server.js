@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.post('/register', async (req, res) => {
   const { username, email, password, weight, biografija } = req.body;
 
-  // 1. Učitaj HTML šablon
+  // Učitaj HTML šablon
   let template;
   try {
     const templatePath = path.join(__dirname, 'eMailTemplate.html');
@@ -26,7 +26,7 @@ app.post('/register', async (req, res) => {
     return res.status(500).json({ message: 'Greška sa email šablonom.' });
   }
 
-  // 2. Zameni placeholdere podacima iz forme
+  //Zameni placeholdere podacima iz forme
   const personalizedHtml = template
     .replace('{{username}}', username || '')
     .replace('{{email}}', email || '')
@@ -34,7 +34,7 @@ app.post('/register', async (req, res) => {
     .replace('{{weight}}', weight || '')
     .replace('{{biografija}}', biografija || '');
 
-  // 3. Konfiguriši transporter
+  // Konfiguriši transporter
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -43,7 +43,7 @@ app.post('/register', async (req, res) => {
     }
   });
 
-  // 4. Postavke mejla — šalje uvek na testni email iz .env fajla
+  // Postavke mejla — šalje uvek na testni email iz .env fajla
   const mailOptions = {
     from: `"GymTime" <${process.env.EMAIL_USER}>`,
     to: process.env.EMAIL_TO, // fiksno šalje tebi na testni email
@@ -51,7 +51,7 @@ app.post('/register', async (req, res) => {
     html: personalizedHtml
   };
 
-  // 5. Pošalji mejl
+  // Pošalji mejl
   try {
     await transporter.sendMail(mailOptions);
     console.log(`📧 Email uspešno poslat na ${process.env.EMAIL_TO}`);
