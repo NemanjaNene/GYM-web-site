@@ -1,0 +1,115 @@
+
+:root{
+  --bg: #0b0f14;
+  --bg-soft: #0f141b;
+  --card: #121823;
+  --text: #e9eef5;
+  --muted: #a7b1c2;
+  --accent: #57d18e;
+  --accent-2: #73a1ff;
+  --shadow: 0 6px 24px rgba(0,0,0,.35);
+  --radius: 16px;
+  --radius-lg: 22px;
+  --maxw: 1100px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:'Outfit', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  line-height:1.6;
+
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 50%, var(--bg) 100%);
+}
+
+img, video{max-width:100%; display:block; border-radius:12px}
+.container{width:100%; max-width:var(--maxw); margin-inline:auto; padding:24px}
+
+header{
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: saturate(140%) blur(10px);
+  background: rgba(11,15,20,.6);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  min-height: 60px; display: flex; align-items: center;
+}
+header .nav.container{
+  width: 100% !important; max-width: none !important;
+  display:flex; justify-content:space-between; align-items:center;
+  padding: 0 60px; margin:0; box-sizing:border-box;
+}
+header .brand{display:flex; align-items:center; gap:12px; font-weight:700; font-size:1.2rem; letter-spacing:.5px}
+header .brand .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow:0 0 0 4px rgba(87,209,142,.15)}
+header .links{display:flex; gap:20px; flex-wrap:wrap}
+header .links a{color: rgba(233,238,245,.75); text-decoration:none; font-weight:600}
+header .links a:hover, header .links a.active{ color:#e9eef5 }
+@media (max-width: 680px){ header .nav.container{ padding: 0 16px; } }
+
+
+.hero{padding:64px 24px 28px}
+.hero .wrap{max-width:880px}
+.eyebrow{display:inline-flex; align-items:center; gap:8px; color:var(--muted); font-weight:600; letter-spacing:.6px; text-transform:uppercase; font-size:12px}
+.eyebrow .chip{padding:4px 10px; border:1px solid rgba(255,255,255,.12); border-radius:999px}
+h1{font-size:44px; line-height:1.1; margin:10px 0 12px}
+.sub{color:var(--muted); max-width:700px}
+
+
+.grid{display:grid; gap:18px}
+.grid-2{grid-template-columns:1fr}
+@media(min-width:880px){.grid-2{grid-template-columns:1.2fr .8fr}}
+.grid-3{grid-template-columns:1fr}
+@media(min-width:760px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+
+.card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px}
+.card h3{margin:8px 0 6px}
+.muted{color:var(--muted)}
+
+
+.tiles{display:grid; gap:18px; grid-template-columns:1fr}
+@media(min-width:760px){.tiles{grid-template-columns:repeat(3,1fr)}}
+.tile{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius-lg); padding:14px; display:flex; flex-direction:column; gap:10px; box-shadow:var(--shadow)}
+.tile h3{margin:6px 0 2px}
+.tile .thumb{
+  height:160px; border-radius:12px; border:1px solid rgba(255,255,255,.08);
+  background:
+    url("https://cdn-icons-png.flaticon.com/512/2964/2964514.png") center/64px no-repeat,
+    linear-gradient(135deg, #1b2730, #12181f);
+}
+.tile .thumb img{ width:100%; height:100%; object-fit:cover; border-radius:12px; display:block }
+.tile .content{ color:var(--text) }
+.tile ul{ margin:8px 0 0; padding-left:18px }
+.tile ul li{ margin:6px 0 }
+
+
+.content-box{ background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.10); border-radius:12px; box-shadow:var(--shadow); padding:16px; margin:20px 0 }
+
+
+.list{margin:10px 0 0; padding:0; list-style:none}
+.list li{padding:8px 10px; border-radius:10px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06); margin-bottom:8px}
+.list li b{color:var(--text)}
+
+
+.tips-wrap{ margin-top:28px; background: rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.10); border-radius: var(--radius-lg); padding:18px 20px; box-shadow: var(--shadow) }
+.tips-wrap h2{ margin: 4px 0 12px }
+
+
+.site-footer{ margin:40px 0 20px; color:var(--muted); text-align:center }
+
+a{color:var(--accent)}
+a:hover{opacity:.9}
+
+
+main{ scroll-margin-top: 80px; }
+
+
+body > header{ position: sticky !important; top: 0; z-index: 1000; }
+
+
+.container.page, .page{ overflow: visible; position: static; }
+
+
+header{ position: sticky; position: -webkit-sticky;} 
+header .links a.active {
+  color: #00ff88;
+}
