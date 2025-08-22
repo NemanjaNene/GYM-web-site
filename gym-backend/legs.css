@@ -153,3 +153,5 @@ main{ scroll-margin-top: 80px; }
 #program.container { 
   padding-top: 250px; 
 }
+html{ background: var(--bg); }
+html, body{ overflow-x: hidden; overscroll-behavior: none; }

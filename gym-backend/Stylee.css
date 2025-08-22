@@ -302,3 +302,6 @@ header .links a.active {
 header{ padding-left:0; padding-right:0; }
 .nav{ padding-left:0; padding-right:0px; }
 .brand{ margin-left:-150px; } */
+
+html{ background: var(--bg); }
+html, body{ overflow-x: hidden; overscroll-behavior: none; }

@@ -17,9 +17,19 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:
 
 
 .site-header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(11,17,22,.9),rgba(11,17,22,.6));backdrop-filter:saturate(140%) blur(6px)}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  gap: 24px;
+}
 .brand{font-weight:800;letter-spacing:.3px}
 .brand .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--brand1);margin-right:8px}
+.links{
+  display:flex;
+  gap:20px;
+}
 .links a{color:var(--muted);text-decoration:none;margin-left:16px;font-weight:600}
 .links a.active,.links a:hover{color:var(--text)}
 
@@ -89,5 +99,9 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:
 }
 
 
-.site-footer{padding:28px 0;color:var(--muted)}
+.site-footer{
+  padding:28px 0;
+  color:var(--muted);
+  text-align:center;
+}
 .tiny{font-size:.9rem}

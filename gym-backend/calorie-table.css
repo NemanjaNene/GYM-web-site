@@ -93,3 +93,5 @@ h1{ font-size: clamp(28px, 2.6vw + 1rem, 44px); line-height:1.1; margin:10px 0 1
   .ct{ font-size:13px }
   .ct td, .ct th{ padding:10px 6px }
 }
+html{ background: var(--bg); }
+html, body{ overflow-x: hidden; overscroll-behavior: none; }

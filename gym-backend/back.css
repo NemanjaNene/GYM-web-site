@@ -30,7 +30,7 @@ img, video{max-width:100%; display:block; border-radius:12px}
 header{
   position: sticky; top: 0; z-index: 50;
   backdrop-filter: saturate(140%) blur(10px);
-  background: rgba(11,15,20,.6);
+  background: linear-gradient(135deg, rgba(87,209,142,.15), rgba(115,161,255,.15));
   border-bottom: 1px solid rgba(255,255,255,.06);
   min-height: 60px; display: flex; align-items: center;
 }
@@ -113,3 +113,5 @@ header{ position: sticky; position: -webkit-sticky;}
 header .links a.active {
   color: #00ff88;
 }
+html{ background: var(--bg); }
+html, body{ overflow-x: hidden; overscroll-behavior: none; }

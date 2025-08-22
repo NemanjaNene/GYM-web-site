@@ -26,13 +26,14 @@ img, video{max-width:100%; display:block; border-radius:12px}
 .container{width:100%; max-width:var(--maxw); margin-inline:auto; padding:24px}
 
 
-header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(10px); background:rgba(11,15,20,.6); border-bottom:1px solid rgba(255,255,255,.06)}
+header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(10px); background: linear-gradient(135deg, rgba(87,209,142,.15), rgba(115,161,255,.15));}
 .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px}
 .brand{display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.5px}
 .brand .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow:0 0 0 4px rgba(87,209,142,.15)}
 .links{display:flex; gap:14px; flex-wrap:wrap}
 .links a{color:var(--muted); text-decoration:none; font-weight:600}
 .links a:hover, .links a.active{color:var(--text)}
+
 
 .hero{padding:64px 24px 2px}
 .hero .wrap{max-width:880px}
@@ -148,7 +149,10 @@ header .links a {
 }
 
 header .links a.active {
-  color: #00ff88;
+  color: var(--accent-2);
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent-2);
+  padding-bottom: 2px;
 }
 
 header .nav.container {

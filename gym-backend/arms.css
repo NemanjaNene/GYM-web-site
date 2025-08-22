@@ -24,7 +24,7 @@ img, video{max-width:100%; display:block; border-radius:12px}
 
 
 .container{width:100%; max-width:var(--maxw); margin-inline:auto; padding:24px}
-header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(10px); background:rgba(11,15,20,.6); border-bottom:1px solid rgba(255,255,255,.06)}
+.header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(10px); background: linear-gradient(135deg, rgba(87,209,142,.15), rgba(115,161,255,.15));; border-bottom:1px solid rgba(255,255,255,.06)}
 .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px}
 .brand{display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.5px}
 .brand .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow:0 0 0 4px rgba(87,209,142,.15)}
@@ -147,7 +147,7 @@ header{
   top: 0;
   z-index: 50;
   backdrop-filter: saturate(140%) blur(10px);
-  background: rgba(11,15,20,.6);
+  background: linear-gradient(135deg, rgba(87,209,142,.15), rgba(115,161,255,.15));
   border-bottom: 1px solid rgba(255,255,255,.06);
   min-height: 60px;
   display: flex;
@@ -218,3 +218,5 @@ main{ scroll-margin-top: 80px; }
 header .links a.active {
   color: #00ff88;
 }
+html{ background: var(--bg); }
+html, body{ overflow-x: hidden; overscroll-behavior: none; }
