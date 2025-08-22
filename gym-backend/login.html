@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign in</title>
+  <link rel="stylesheet" href="Stylee.css" />
+  
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav">
+      <a href="HomePage.html" class="btn-home">Home</a>
+    </div>
+  </header>
+
+  <main class="login-wrap">
+    <div class="login-card">
+      <h1>Sign in</h1>
+      <form action="HomePage.html" method="get" class="login-form">
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="you@example.com" required />
+        </label>
+
+        <label>
+          <span>Password</span>
+          <input type="password" name="password" placeholder="Enter password" required />
+        </label>
+
+        <button type="submit" class="btn btn-primary login-btn">Login</button>
+        <p class="forgot">
+          <a href="forgot-password.html">Forgot password?</a>
+        </p>
+      </form>
+
+      <p class="hint">
+        Nemate nalog?
+        <a href="RegisterForm.html">Napravite svoj</a>
+      </p>
+    </div>
+  </main>
+
+</body>
+</html>
