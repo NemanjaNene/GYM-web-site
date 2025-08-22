@@ -195,3 +195,6 @@ header .nav.container {
     border-radius: 12px;
   }
 }
+header .links a.active {
+  color: #00ff88 !important;
+}

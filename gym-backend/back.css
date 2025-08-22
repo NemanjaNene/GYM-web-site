@@ -115,3 +115,7 @@ header .links a.active {
 }
 html{ background: var(--bg); }
 html, body{ overflow-x: hidden; overscroll-behavior: none; }
+
+.links a.active {
+  border-bottom: 2px solid #4dabf7;
+}

@@ -139,6 +139,9 @@ a:hover{opacity:.9}
 header .links a.active {
   color: #00ff88 !important;
 }
+.links a.active {
+  border-bottom: 2px solid #4dabf7;
+}
 
 
 
