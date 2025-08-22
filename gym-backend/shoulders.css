@@ -233,3 +233,9 @@ header .links a.active {
 }
 html{ background: var(--bg); }
 html, body{ overflow-x: hidden; overscroll-behavior: none; }
+@media (max-width: 560px){
+  .nav{ flex-direction: column; align-items: center; gap: 8px; padding: 10px 12px; }
+  .brand{ justify-content: center; }
+  .links{ flex-wrap: wrap; justify-content: center; gap: 12px; }
+  header .links a.active{ border-bottom: none; padding-bottom: 0; }
+}
