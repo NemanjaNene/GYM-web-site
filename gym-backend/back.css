@@ -125,3 +125,9 @@ html, body{ overflow-x: hidden; overscroll-behavior: none; }
   .links{ flex-wrap: wrap; justify-content: center; gap: 12px; }
   header .links a.active{ border-bottom: none; padding-bottom: 0; }
 }
+ .hero-imagge img {
+    width: clamp(250px, 28vw, 350px); 
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(0,0,0,.5));
+    border-radius: 12px;
+  }

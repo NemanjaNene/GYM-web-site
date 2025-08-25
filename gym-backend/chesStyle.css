@@ -189,7 +189,7 @@ header .nav.container {
   }
 
   .hero-image img {
-    width: clamp(300px, 28vw, 400px); 
+    width: clamp(250px, 28vw, 350px); 
     height: auto;
     filter: drop-shadow(0 0 15px rgba(0,0,0,.5));
     border-radius: 12px;
