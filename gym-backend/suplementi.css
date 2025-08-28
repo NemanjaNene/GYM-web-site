@@ -105,3 +105,8 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:
   text-align:center;
 }
 .tiny{font-size:.9rem}
+.logo {
+  height: 50px;  
+  width: auto;    
+  display: block;
+}

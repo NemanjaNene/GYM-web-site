@@ -148,3 +148,8 @@ footer.container.footer{
 main {
   margin-top: -80px;
 }
+.logo {
+  height: 50px;  
+  width: auto;    
+  display: block;
+}

@@ -220,7 +220,7 @@ main{ scroll-margin-top: 80px; }
   height: 160px;
   border-radius: 12px;
   background:
-    url("https://cdn-icons-png.flaticon.com/512/2964/2964514.png") center/64px no-repeat,
+    url("pictures/rame-gedzet.png") center/150px no-repeat,
     linear-gradient(135deg, #1b2730, #12181f);
   border: 1px solid rgba(255,255,255,.08);
 }
@@ -238,4 +238,9 @@ html, body{ overflow-x: hidden; overscroll-behavior: none; }
   .brand{ justify-content: center; }
   .links{ flex-wrap: wrap; justify-content: center; gap: 12px; }
   header .links a.active{ border-bottom: none; padding-bottom: 0; }
+}
+.logo {
+  height: 50px;  
+  width: auto;    
+  display: block;
 }

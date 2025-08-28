@@ -113,3 +113,8 @@ h1{ font-size: clamp(28px, 2.6vw + 1rem, 44px); line-height:1.1; margin:10px 0 1
 }
 html{ background: var(--bg); }
 html, body{ overflow-x: hidden; overscroll-behavior: none; }
+.logo {
+  height: 50px;  
+  width: auto;    
+  display: block;
+}

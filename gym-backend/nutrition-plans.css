@@ -143,3 +143,8 @@ tr:hover {
 }
 html{ background: var(--bg); }
 html, body{ overflow-x: hidden; overscroll-behavior: none; }
+ .logo {
+  height: 50px; 
+  width: auto;    
+  display: block;
+}
