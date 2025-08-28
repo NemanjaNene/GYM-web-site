@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aspire • Postavi mi pitanje</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    
+    :root{
+      --bg: #0a0f14;
+      --card: #0c1218;
+      --text: #e9f1f6;
+      --muted: #9fb2c3;
+      --stroke: rgba(120,130,150,.25);
+      --brand1: #67f3d3;
+      --brand2: #49cfe0;
+    }
+    @keyframes float {
+      0%   {transform:translate3d(0,0,0); opacity:.7}
+      50%  {transform:translate3d(10px, -8px, 0); opacity:.95}
+      100% {transform:translate3d(0,0,0); opacity:.7}
+    }
+    @keyframes glow {
+      0%   {box-shadow: 0 0 0 rgba(103,243,211,.0), 0 0 0 rgba(73,207,224,.0)}
+      50%  {box-shadow: 0 8px 26px rgba(103,243,211,.18), 0 0 60px rgba(73,207,224,.15)}
+      100% {box-shadow: 0 0 0 rgba(103,243,211,.0), 0 0 0 rgba(73,207,224,.0)}
+    }
+    @keyframes drift {
+      0%   { transform: translate3d(0,0,0) scale(1);    filter:hue-rotate(0deg);   opacity:.45; }
+      50%  { transform: translate3d(40px,-30px,0) scale(1.08); filter:hue-rotate(40deg); opacity:.8; }
+      100% { transform: translate3d(0,0,0) scale(1);    filter:hue-rotate(0deg);   opacity:.45; }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 800px at 15% -10%, rgba(103,243,211,.10), transparent 55%) ,
+                  radial-gradient(1100px 700px at 110% -15%, rgba(73,207,224,.10), transparent 55%) ,
+                  var(--bg);
+      color:var(--text);
+      font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1100px, calc(100% - 32px)); margin:0 auto;}
+    .page{padding: 6px 0 60px;}
+    .page::before,
+    .page::after{
+      content:"";
+      position:fixed;
+      inset:auto;
+      width:420px; height:420px;
+      border-radius:50%;
+      filter: blur(60px);
+      pointer-events:none;
+      z-index:0;
+      opacity:.8;
+      animation: float 9s ease-in-out infinite;
+    }
+    .page::before{ left:-120px; bottom:6vh; background: radial-gradient(closest-side, rgba(103,243,211,.18), rgba(103,243,211,.0)); }
+    .page::after { right:-120px; top:18vh;   background: radial-gradient(closest-side, rgba(73,207,224,.18),   rgba(73,207,224,.0)); animation-duration: 12s;}
+    .floaters{
+      position:fixed; inset:0; pointer-events:none; z-index:0;
+    }
+    .floaters span{
+      position:absolute; width:340px; height:340px; border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, rgba(103,243,211,.35), rgba(73,207,224,.25) 40%, rgba(255,75,140,.18) 75%, transparent 80%);
+      filter: blur(28px);
+      animation: drift 10s ease-in-out infinite;
+    }
+    .floaters span:nth-child(1){ left:-120px; top:14vh; animation-duration: 12s; }
+    .floaters span:nth-child(2){ right:-140px; top:6vh;  animation-duration: 15s; }
+    .floaters span:nth-child(3){ left:15%; bottom:8vh;  animation-duration: 13.5s; }
+    .floaters span:nth-child(4){ right:12%; bottom:14vh; animation-duration: 16s; }
+    .floaters span:nth-child(5){ left:42%; top:28vh;    animation-duration: 18s; }
+   
+    .site-header{position:sticky; top:0; z-index:50; background:rgba(10,15,20,.35); backdrop-filter: blur(10px); border-bottom:1px solid rgba(120,130,150,.12)}
+    .nav{display:flex; align-items:center; gap:12px; padding:10px 0; justify-content:flex-start;}
+    .logo{height:38px; display:block; margin-left: -260px;}
+    .brand{display:flex; align-items:center;}
+    .links{display:none;}
+
+    
+    .ask-hero{ padding: 36px 0 12px; }
+    .ask-hero .wrap{ max-width: 880px; margin:0 auto; text-align:center; }
+    .ask-hero h1{ margin:0 0 8px; letter-spacing:.2px; }
+    .ask-hero .sub{ opacity:.9 }
+
+    .ask-form{
+      position:relative;
+      max-width: 900px; margin: 24px auto 50px;
+      background: radial-gradient(120% 180% at 0% 0%, rgba(103,243,211,.08), rgba(73,207,224,.06) 40%, rgba(255,255,255,.02) 60%);
+      border:1px solid rgba(103,243,211,.35);
+      border-radius:20px; padding:26px 24px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.06);
+      z-index:1;
+    }
+    .ask-form::after{
+      content:""; position:absolute; inset:-1px; border-radius:20px; pointer-events:none;
+      background: linear-gradient(120deg, rgba(103,243,211,.55), rgba(73,207,224,.55), rgba(255,75,140,.42));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+      padding:1px; opacity:.35;
+    }
+    .ask-form .grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+    .ask-form .field{ display:flex; flex-direction:column; gap:6px; }
+    .ask-form .field:focus-within label{ color: var(--brand1); }
+    .ask-form label{ font-weight:600; font-size:.95rem; }
+    .ask-form input, .ask-form textarea, .ask-form select{
+      background:#0b1116; color:var(--text);
+      border:1px solid rgba(120,130,150,.30);
+      border-radius:14px; padding:13px 14px; outline:none;
+      transition: border-color .15s ease, box-shadow .15s ease, transform .04s ease;
+    }
+    .ask-form input:focus, .ask-form textarea:focus, .ask-form select:focus{
+      border-color: rgba(103,243,211,.9);
+      box-shadow: 0 0 0 3px rgba(103,243,211,.18), 0 8px 24px rgba(73,207,224,.15);
+      transform: translateY(-1px);
+    }
+    .ask-form textarea{ min-height: 150px; resize: vertical; }
+    .ask-form .actions{ display:flex; gap:10px; justify-content:space-between; margin-top:14px; flex-wrap:wrap; }
+    .ask-form .btn{ padding:12px 20px; border-radius:14px; font-weight:800; text-decoration:none; border:0; cursor:pointer; transform: translateZ(0); }
+    .ask-form .btn.primary{
+      background:linear-gradient(90deg, var(--brand1), var(--brand2));
+      color:#0b1116; animation: glow 3.6s ease-in-out infinite;
+    }
+    .ask-form .btn.primary:hover{ filter:saturate(1.15) brightness(1.05) }
+    .ask-form .btn.ghost{ background:transparent; border:1px solid rgba(120,130,150,.30); color:var(--text); }
+    
+    .notice{ font-size:.9rem; opacity:.85; margin-top:8px }
+    .toast{ position:fixed; left:50%; bottom:24px; transform:translateX(-50%); background:rgba(255,255,255,.08); border:1px solid rgba(120,130,150,.25); padding:10px 14px; border-radius:12px; display:none }
+
+    @media (max-width: 720px){
+      .ask-form .grid{ grid-template-columns: 1fr; }
+    }
+
+    
+    .btn{ padding:12px 16px; border-radius:12px; font-weight:800; text-decoration:none; border:0; cursor:pointer; }
+    .btn.ghost{ background:transparent; border:1px solid var(--stroke); color:var(--text); }
+
+    .btn.outline{
+      color:var(--text);
+      position:relative;
+      border-radius:12px;
+      background: transparent;
+      border: 1px solid rgba(120,130,150,.35);
+      overflow:hidden;
+    }
+    .btn.outline::before{
+      content:""; position:absolute; inset:-1px; border-radius:12px;
+      background: linear-gradient(120deg, var(--brand1), var(--brand2));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+      padding:1px; opacity:.55; transition:opacity .2s ease;
+    }
+    .btn.outline:hover::before{opacity:.9}
+    
+    .select{ position:relative; }
+    .select-btn{
+      width:100%; text-align:left; background:#0b1116; color:var(--text);
+      border:1px solid rgba(120,130,150,.30); border-radius:14px;
+      padding:13px 44px 13px 14px; cursor:pointer; outline:none;
+      transition:border-color .15s ease, box-shadow .15s ease, transform .04s ease;
+    }
+    .select-btn:hover{ border-color: rgba(120,130,150,.5); }
+    .select-btn:focus{ border-color: rgba(103,243,211,.9); box-shadow:0 0 0 3px rgba(103,243,211,.18), 0 8px 24px rgba(73,207,224,.15); transform:translateY(-1px); }
+    .select-btn::after{
+      content:""; position:absolute; right:14px; top:50%; width:10px; height:10px;
+      border-right:2px solid var(--muted); border-bottom:2px solid var(--muted);
+      transform:translateY(-60%) rotate(45deg); transition:transform .2s ease, border-color .2s ease;
+      pointer-events:none;
+    }
+    .select[aria-expanded="true"] .select-btn::after{ transform:translateY(-40%) rotate(225deg); border-color: var(--brand1); }
+    .select-list{
+      position:absolute; left:0; right:0; top:calc(100% + 8px);
+      background:#0b1116; border:1px solid rgba(103,243,211,.35); border-radius:14px;
+      padding:6px; list-style:none; margin:0; display:none; z-index:5;
+      box-shadow:0 20px 60px rgba(0,0,0,.45), 0 2px 0 rgba(255,255,255,.04) inset;
+      max-height:260px; overflow:auto;
+    }
+    .select[aria-expanded="true"] .select-list{ display:block; animation:fadeIn .12s ease; }
+    @keyframes fadeIn{ from{opacity:0; transform:translateY(-4px);} to{opacity:1; transform:translateY(0);} }
+    .select-list li{
+      padding:10px 12px; border-radius:10px; cursor:pointer; color:var(--text);
+      transition: background .15s ease, transform .02s ease;
+    }
+    .select-list li:hover{ background:rgba(103,243,211,.08); }
+    .select-list li[aria-selected="true"]{ background:linear-gradient(90deg, var(--brand1), var(--brand2)); color:#0b1116; font-weight:800; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="HomePage.html" aria-label="Aspire">
+        <img src="Aspire_logo/Aspire_logo.png" class="logo" alt="Aspire">
+      </a>
+    </div>
+  </header>
+
+  <div class="floaters">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <main class="container page">
+    <section class="ask-hero hero">
+      <div class="wrap">
+        <span class="eyebrow">• Pitanja & komentari •</span>
+        <h1>Postavi mi pitanje</h1>
+        <p class="sub">Pisi kratko i jasno – odgovaram licno, u sklopu edukativnog sadrzaja na sajtu.</p>
+      </div>
+    </section>
+
+    <form id="askForm" class="ask-form" autocomplete="on">
+      <div class="grid">
+        <div class="field">
+          <label for="name">Ime i prezime</label>
+          <input id="name" name="name" placeholder="npr. Mlan Milanovic" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="npr. ime@domen.com" required>
+        </div>
+        <div class="field">
+          <label for="topic">Tema</label>
+          <div class="select" data-name="topic" aria-expanded="false">
+            <button type="button" class="select-btn">Izaberi temu…</button>
+            <ul class="select-list" role="listbox">
+              <li data-value="Trening">Trening</li>
+              <li data-value="Iskustvo / Hemija">Iskustvo / Hemija</li>
+              <li data-value="Ishrana">Ishrana</li>
+              <li data-value="Program / Plan">Program / Plan</li>
+              <li data-value="Ostalo">Ostalo</li>
+            </ul>
+            <input type="hidden" id="topic" name="topic" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="priority">Prioritet</label>
+          <div class="select" data-name="priority" aria-expanded="false" data-default="Normalno">
+            <button type="button" class="select-btn">Normalno</button>
+            <ul class="select-list" role="listbox">
+              <li data-value="Normalno" aria-selected="true">Normalno</li>
+              <li data-value="Vazno">Vazno</li>
+              <li data-value="Hitno">Hitno</li>
+            </ul>
+            <input type="hidden" id="priority" name="priority" value="Normalno">
+          </div>
+        </div>
+        <div class="field" style="grid-column:1/-1">
+          <label for="message">Pitanje / komentar</label>
+          <textarea id="message" name="message" placeholder="Upisi konkretno pitanje, cilj, i kontekst (godine, iskustvo, ciljevi)…" required></textarea>
+          <p class="notice">Slanjem se kreira email draft sa svim podacima. Nista se ne cuva na serveru.</p>
+        </div>
+      </div>
+      <div class="actions">
+        <a href="HomePage.html" class="btn primary">← Nazad na pocetnu</a>
+        <button type="submit" class="btn primary">Posalji</button>
+      </div>
+    </form>
+
+    <div id="toast" class="toast">Otvaram email…</div>
+  </main>
+<script>
+
+(function(){
+  function initSelect(root){
+    const btn = root.querySelector('.select-btn');
+    const list = root.querySelector('.select-list');
+    const input = root.querySelector('input[type="hidden"]');
+
+    function open(open){
+      root.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    btn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      open(root.getAttribute('aria-expanded') !== 'true');
+    });
+
+    list.addEventListener('click', (e)=>{
+      const li = e.target.closest('li'); if(!li) return;
+      list.querySelectorAll('[aria-selected="true"]').forEach(n=>n.removeAttribute('aria-selected'));
+      li.setAttribute('aria-selected','true');
+      const val = li.getAttribute('data-value') || li.textContent.trim();
+      input.value = val;
+      btn.textContent = val;
+      open(false);
+    });
+
+    document.addEventListener('click', ()=> open(false));
+
+   
+    const def = root.getAttribute('data-default') || input.value;
+    if(def){
+      const found = Array.from(list.children).find(li => (li.getAttribute('data-value')||li.textContent.trim())===def);
+      if(found){ found.setAttribute('aria-selected','true'); btn.textContent = def; input.value = def; }
+    }
+  }
+
+  document.querySelectorAll('.select').forEach(initSelect);
+})();
+</script>
+</body>
+</html>

@@ -99,6 +99,41 @@
         <div class="micro">Cilj: oporavak, energija, imunitet.</div>
         <div class="micro">Zinc, Magnezijum bisciglinat, Omega3...</div>
       </article>
+      <div class="card">
+  <div class="card-badge">⚠︎ Off-topic</div>
+  <h3>Hemija (zabranjena tema)</h3>
+  <p class="micro">Moje iskustvo, misljenje, rizici i zašto 99% ljudi ovo ne treba da radi.</p>
+
+  <div class="chem-wrap">
+    <button class="chem-btn" id="openChem">
+      Hemija
+      <span class="ring ring-1" aria-hidden="true"></span>
+      <span class="ring ring-2" aria-hidden="true"></span>
+    </button>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="chemModal" aria-hidden="true" role="dialog" aria-labelledby="chemTitle">
+  <div class="modal__backdrop" id="chemCloseBackdrop"></div>
+  <div class="modal__panel" role="document">
+    <button class="modal__x" id="chemCloseBtn" aria-label="Zatvori">×</button>
+    <h3 id="chemTitle">Hemija – licno iskustvo i stav</h3>
+    <div class="modal__body">
+      <p><strong>DISCLAIMER:</strong> Ovo nije preporuka. Opisujem licno iskustvo, rizike, i zasto smatram da je prirodan pristup najbolji za 99% rekreativaca.</p>
+      <ul>
+        <li>🧪 Sta sam koristio i u kojim periodima.</li>
+        <li>⚠️ Zdravstveni rizici (jetra, krvna slika, lipidi, krvni pritisak…)</li>
+        <li>🧠 Psihologija i razlog za/ protiv.</li>
+        <li>📊 Sta je zaista dalo rezultat, a sta je placebo.</li>
+        <li>✅ Sta bih uradio drugacije i zasto danas ne preporucujem.</li>
+      </ul>
+      <div class="modal__footer">
+  <a href="questions.html" class="btn" id="askBtn">POSTAVI MI PITANJE</a>
+</div>
+    </div>
+  </div>
+</div>
     </section>
 
     
@@ -116,5 +151,35 @@
   <footer class="site-footer">
     <div class="container tiny">© Aspire • Sva prava i ideje pripadaju Nikitovic Nemanja i Dejanu Arsenijevic.</div>
   </footer>
+  <script>
+  (function(){
+    const open  = document.getElementById('openChem');
+    const modal = document.getElementById('chemModal');
+    const closeBtn = document.getElementById('chemCloseBtn');
+    const closeBackdrop = document.getElementById('chemCloseBackdrop');
+
+    function openModal(){
+      modal.setAttribute('aria-hidden','false');
+      // fokus na panel radi pristupačnosti
+      setTimeout(()=> {
+        modal.querySelector('.modal__panel').focus?.();
+      }, 0);
+    }
+    function closeModal(){
+      modal.setAttribute('aria-hidden','true');
+      open.focus?.();
+    }
+
+    open?.addEventListener('click', openModal);
+    closeBtn?.addEventListener('click', closeModal);
+    closeBackdrop?.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false'){
+        closeModal();
+      }
+    });
+  })();
+</script>
 </body>
 </html>

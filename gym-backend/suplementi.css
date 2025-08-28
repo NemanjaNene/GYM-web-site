@@ -10,10 +10,24 @@
 }
 
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
+html,body{
+  margin:0;
+  padding:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  line-height:1.55;
+  /* stop rubber-band / pull-to-stretch */
+  overscroll-behavior: none;
+  height:100%;
+  overflow-x:hidden;
+}
 
 .container{max-width:1100px;margin:0 auto;padding:0 20px}
-.page{padding:56px 0 80px}
+.page{
+  padding:56px 0 80px;
+  min-height:100dvh; /* ensure content fills the viewport so there's no empty area to pull */
+}
 
 
 .site-header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(11,17,22,.9),rgba(11,17,22,.6));backdrop-filter:saturate(140%) blur(6px)}
@@ -59,12 +73,18 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:
   z-index:-1;filter:blur(24px)
 }
 .card-badge{
-  position:absolute;top:14px;right:14px;
+  position:absolute;top:16px;right:16px;
   background:linear-gradient(90deg,var(--brand1),var(--brand2));
   color:#0b1116;font-weight:800;font-size:.72rem;
   padding:6px 10px;border-radius:999px
 }
-.card h3{margin:0 0 8px;font-size:1.25rem}
+.card h3{
+  margin:0 0 10px;
+  font-size:1.25rem;
+  line-height:1.25;
+  padding-right:120px;      /* ostavi mesta za badge da naslov ne ulazi ispod njega */
+  word-break:break-word;    /* ne dozvoli preklapanje na manjim širinama */
+}
 .card p{margin:0 0 10px;color:var(--text)}
 .tips{margin:0 0 10px 18px;color:var(--muted)}
 .tips li{margin:6px 0}
@@ -110,3 +130,106 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:
   width: auto;    
   display: block;
 }
+/* ========== HEMIJA dugme sa orbitirajućim “neon” krugovima ========== */
+.chem-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  height: 50%;
+}
+
+.chem-btn{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 22px;
+  border-radius:14px;
+  font-weight:800;
+  color:#0b1116;
+  background:linear-gradient(90deg,var(--brand1),var(--brand2));
+  border:none;
+  cursor:pointer;
+  isolation:isolate;            /* da ringovi ostanu ispod teksta */
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+.chem-btn .ring{
+  position:absolute; inset:-18px;
+  border-radius:999px;
+  background: conic-gradient(
+    from 0deg,
+    rgba(93,141,255,.0) 0deg,
+    rgba(93,141,255,.7) 90deg,
+    rgba(53,209,168,.9) 180deg,
+    rgba(93,141,255,.7) 270deg,
+    rgba(93,141,255,.0) 360deg
+  );
+  filter: blur(6px) saturate(140%);
+  z-index:-1;
+  animation: spin 4.8s linear infinite;
+  opacity:.6;
+}
+.chem-btn .ring-2{
+  inset:-26px; 
+  filter: blur(10px) saturate(160%);
+  animation-duration: 7.2s;
+  animation-direction: reverse;
+  opacity:.4;
+}
+
+/* tasteful hover */
+.chem-btn:hover { transform: translateY(-1px); }
+.chem-btn:active { transform: translateY(0); }
+
+/* “orbit” */
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 480px){
+  .chem-btn{ padding:12px 18px; }
+  .chem-btn .ring{ inset:-14px; }
+  .chem-btn .ring-2{ inset:-20px; }
+}
+
+/* Poštuj prefer-reduced-motion */
+@media (prefers-reduced-motion: reduce){
+  .chem-btn .ring{ animation: none; }
+}
+
+/* ========== Modal (dark, stapa se sa temom) ========== */
+.modal{ position: fixed; inset:0; display:none; }
+.modal[aria-hidden="false"]{ display:block; }
+
+.modal__backdrop{
+  position:absolute; inset:0;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(4px);
+}
+
+.modal__panel{
+  position: relative;
+  max-width: 760px;
+  margin: 8vh auto;
+  background: var(--panel);
+  border:1px solid rgba(120,130,150,.2);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 22px 22px 18px;
+}
+
+.modal__x{
+  position:absolute; top:8px; right:12px;
+  width:36px; height:36px; border:none; border-radius:10px;
+  background:rgba(255,255,255,.06); color:var(--text);
+  font-size:22px; cursor:pointer;
+}
+.modal__x:hover{ background:rgba(255,255,255,.09); }
+
+.modal__body{ color:var(--text); }
+.modal__body ul{ margin:12px 0 0 20px; }
+.modal__body li{ margin:6px 0; }
+
+/* Modal footer (CTA) */
+.modal__footer{ margin-top:16px; display:flex; justify-content:center; }
+.modal__footer .btn{ padding:12px 18px; border-radius:14px; font-weight:800; text-decoration:none; }
