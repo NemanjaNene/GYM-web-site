@@ -86,12 +86,56 @@
       </div>
     </section>
 
+    <!-- <script>
+
+      const cardsArray = [
+        {
+          title: "Cucanj (Back Squat)",
+          sets: "4",
+          reps: "6-10",
+          rir: "1-2 RIR",
+          tempo: "2-0-1",
+          description: "Jak core, sedaj izmedju kukova, standardizuj dubinu. Dodaj 2.5–5 kg sledeceg puta ako si ispostovao cilj RIR.",
+        },
+        {
+          title:" Rumunsko mrtvo dizanje (RDL)",
+          sets: "3",
+          reps: "8-12",
+          rir: "1-2 RIR",
+          tempo: "2-1-1",
+          description: "Kukovi unazad, blago savijena kolena, sipka blizu tela. Oseti istezanje, bez odbijanja u dnu.",
+        }
+        ,{
+          title:"Leg press / Bugarski iskorak",
+          sets: "3",
+          reps: "10-15",
+          rir: "0-1",
+          tempo: "Kontrolisano",
+          description: "Puna amplituda i ravnomeran tempo. Kod bugarskog iskoraka blago nagni trup napred za vise kvadricepsa.",
+        }
+      ]
+    </script>
+
     <section id="vezbe" class="container exercises">
       <h2>Klucne vezbe</h2>
       <p class="muted">Svaku vezbu zapocni sa 2–3 serije zagrevanja. Na radnim serijama drzi 1–2 RIR, a jednu pomocnu vezbu mozes da odradis do 0 RIR ako se dobro oporavljas.</p>
 
       <div class="ex-grid">
-        <article class="ex">
+
+        <script>
+          cardsArray.forEach(card => {
+            document.write(`
+              <article class="ex">
+                <div class="media">
+                </div>
+                <h4>${card.title}</h4>
+                <div class="meta"><span>${card.sets}×${card.reps}</span><span>${card.rir}</span><span>Tempo ${card.tempo}</span></div>
+                <p class="muted">${card.description}</p>
+              </article>
+            `);
+          });
+        </script>-->
+         <article class="ex">
           <div class="media">
           </div>
           <h4>Cucanj (Back Squat)</h4>
@@ -142,7 +186,7 @@
           <h4>Podizanje na prste</h4>
           <div class="meta"><span>3–4×8–12</span><span>Pauza 2–3 s na vrhu</span></div>
           <p class="muted">Puni isteg pri dnu, jaka pauza na vrhu. Bez jurcanja — kvalitet pokreta je prioritet.</p>
-        </article>
+        </article> 
       </div>
     </section>
 
